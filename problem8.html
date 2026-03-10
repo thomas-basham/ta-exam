@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Score Dashboard</title>
+</head>
+<body>
+  <h1>Problem 8 (Level 4)</h1>
+  <p>Skill focus: advanced JavaScript debugging and teaching communication.</p>
+  <p>Fix the script so it prints accurate score statistics.</p>
+
+  <pre id="output"></pre>
+
+  <script>
+    const rawScores = ['98', 84, 76, null, 120, -5, '91', undefined, 67];
+
+    function normalizeScores(values) {
+      return values
+        .filter((value) => value !== null || value !== undefined)
+        .map((value) => Number(value))
+        .filter((value) => !Number.isNaN(value))
+        .filter((value) => value >= 0 || value <= 100);
+    }
+
+    function getStats(scores) {
+      const total = scores.reduce((sum, score) => sum + score);
+      const average = (total / scores.length).toFixed(1);
+      const highest = Math.max(scores);
+      const lowest = Math.min(scores);
+
+      return { total, average, highest, lowest };
+    }
+
+    function renderStats(stats) {
+      document.getElementById('output').textContent =
+        `Total: ${stats.total}\nAverage: ${stats.average}\nHighest: ${stats.highest}\nLowest: ${stats.lowest}`;
+    }
+
+    const cleanScores = normalizeScores(rawScores);
+    const stats = getStats(cleanScores);
+    renderStats(stats);
+  </script>
+
+  <p>Requirements:</p>
+  <ul>
+    <li>Ignore invalid scores (non-numeric, below 0, above 100).</li>
+    <li>Handle an empty valid-score list without crashing.</li>
+    <li>Add 2-3 lines of comments explaining how you would teach this fix to a Level 1 student.</li>
+  </ul>
+</body>
+</html>

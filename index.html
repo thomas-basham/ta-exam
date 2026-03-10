@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TA Assessment Launcher</title>
+  <style>
+    :root {
+      --bg: #f8f5ef;
+      --card: #fffdf8;
+      --ink: #1f2933;
+      --muted: #52606d;
+      --accent: #0b6e4f;
+      --accent-2: #164e63;
+      --line: #d9e2ec;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Trebuchet MS", "Avenir Next", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 10%, #e7f4ee 0, transparent 38%),
+        radial-gradient(circle at 90% 15%, #e6f1f6 0, transparent 35%),
+        var(--bg);
+    }
+
+    .wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+
+    .hero {
+      background: linear-gradient(120deg, #ffffff, #f5fbf8);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 2rem;
+      line-height: 1.1;
+      letter-spacing: 0.01em;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+      letter-spacing: 0.01em;
+    }
+
+    p {
+      margin: 0 0 10px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      padding: 10px 14px;
+      font-weight: 700;
+      font-size: 0.94rem;
+      cursor: pointer;
+      transition: transform 120ms ease, box-shadow 120ms ease;
+    }
+
+    .btn:focus-visible,
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 7px 18px rgba(11, 110, 79, 0.26);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--accent-2);
+      border-color: #bfccd6;
+    }
+
+    .grid {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .level {
+      margin: 0 0 8px;
+      font-size: 0.88rem;
+      letter-spacing: 0.04em;
+      color: var(--accent-2);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    a.inline {
+      color: var(--accent-2);
+      text-decoration-thickness: 2px;
+    }
+
+    .remote {
+      margin-top: 20px;
+      border-left: 4px solid var(--accent);
+      padding: 10px 14px;
+      background: #f1faf6;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 760px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <h1>TA Technical Assessment</h1>
+      <p>This launcher organizes the exam by Levels 1-4 and provides quick access to all problems.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="problem1.html">Start Assessment (Level 1)</a>
+        <a class="btn btn-secondary" href="README.md">Open Instructions</a>
+        <a class="btn btn-secondary" href="assessment-rubric.md">Open Rubric</a>
+      </div>
+      <div class="remote">
+        <p><strong>Remote format:</strong> evaluator shares screen and does all typing; candidate guides each step as the TA.</p>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="Assessment levels">
+      <article class="card">
+        <p class="level">Level 1</p>
+        <h2>Foundations</h2>
+        <ul>
+          <li><a class="inline" href="problem1.html">Problem 1</a> - HTML/CSS basics</li>
+          <li><a class="inline" href="problem2.html">Problem 2</a> - JavaScript/DOM basics</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <p class="level">Level 2</p>
+        <h2>Layout and Responsive Design</h2>
+        <ul>
+          <li><a class="inline" href="problem3.html">Problem 3</a> - Bootstrap grid debugging</li>
+          <li><a class="inline" href="problem4.html">Problem 4</a> - Media-query logic</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <p class="level">Level 3</p>
+        <h2>Interactive JavaScript</h2>
+        <ul>
+          <li><a class="inline" href="problem5.html">Problem 5</a> - Events and forms</li>
+          <li><a class="inline" href="problem6.html">Problem 6</a> - Async fetch flow</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <p class="level">Level 4</p>
+        <h2>Advanced Debugging and Teaching</h2>
+        <ul>
+          <li><a class="inline" href="problem7.html">Problem 7</a> - Logic and edge cases</li>
+          <li><a class="inline" href="problem8.html">Problem 8</a> - Data validation and coaching</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
