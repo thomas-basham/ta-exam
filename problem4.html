@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Responsive Cards</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 24px;
+    }
+
+    .cards {
+      display: flex;
+      gap: 16px;
+    }
+
+    .card {
+      flex: 0 0 33.333%;
+      padding: 16px;
+      border: 1px solid #ddd;
+      background: #f4f4f4;
+    }
+
+    @media (min-width: 768px) {
+      .cards {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Problem 4 (Level 2)</h1>
+  <p>Skill focus: responsive CSS and media-query logic.</p>
+  <p>These cards should display in three columns on desktop and one column on mobile.</p>
+
+  <section class="cards">
+    <article class="card">Card A</article>
+    <article class="card">Card B</article>
+    <article class="card">Card C</article>
+  </section>
+
+  <p>Fix the responsive layout and explain why your media query works.</p>
+</body>
+</html>

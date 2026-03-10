@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Grade Summary</title>
+</head>
+<body>
+  <h1>Problem 7 (Level 4)</h1>
+  <p>Skill focus: JavaScript logic debugging and edge-case handling.</p>
+  <p>Debug the score logic and print a correct summary.</p>
+
+  <pre id="output"></pre>
+
+  <script>
+    const submissions = [92, 88, 73, 101, -4, 67, 100];
+
+    function getAverage(scores) {
+      let total = 0;
+
+      for (const score in scores) {
+        total += score;
+      }
+
+      return Math.round(total / scores.length);
+    }
+
+    function getPassingCount(scores) {
+      return scores.filter((score) => score >= 70).lenght;
+    }
+
+    const average = getAverage(submissions);
+    const passingCount = getPassingCount(submissions);
+
+    document.getElementById('output').textContent =
+      `Average: ${average}\nPassing students: ${passingCount}`;
+  </script>
+
+  <p>Fix all logic bugs. Ignore invalid scores (below 0 or above 100), and add one short comment explaining how you would teach the fix to a beginner.</p>
+</body>
+</html>

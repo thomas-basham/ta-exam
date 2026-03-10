@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Task List</title>
+</head>
+<body>
+  <h1>Problem 5 (Level 3)</h1>
+  <p>Skill focus: DOM events and form handling.</p>
+  <p>This form should add tasks to the list when submitted.</p>
+
+  <form id="task-form">
+    <label for="task-input">Task</label>
+    <input id="task-input" type="text" />
+    <button type="submit">Add</button>
+  </form>
+
+  <ul id="task-list"></ul>
+
+  <script>
+    const form = document.getElementById('taskForm');
+    const input = document.getElementById('task-input');
+    const list = document.getElementById('task-list');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const value = input.value.trim;
+
+      if (value === '') {
+        return;
+      }
+
+      const li = document.createElement('li');
+      li.textContent = value;
+      list.appendChild(li);
+      input.value = '';
+    });
+  </script>
+
+  <p>Fix the bug(s), prevent empty tasks, and add a way to remove a task.</p>
+</body>
+</html>
